@@ -1,0 +1,8 @@
+# Scraped output
+*.json
+*.csv
+
+# Python
+__pycache__/
+*.pyc
+.venv/

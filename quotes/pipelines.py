@@ -10,4 +10,9 @@ from itemadapter import ItemAdapter
 
 class QuotesPipeline:
     def process_item(self, item, spider):
+        adapter = ItemAdapter(item)
+        text = adapter.get('text')
+        if text:
+            # Strip the curly quote marks the site wraps around each quote
+            adapter['text'] = text.strip().strip('“”')
         return item
